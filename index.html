@@ -288,6 +288,8 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
 .work-card{transition:background .3s,opacity .4s,transform .4s}
 .work-card.hidden{opacity:0;transform:scale(.95);pointer-events:none;position:absolute}
 
+.work-thumb-vertical{aspect-ratio:9/16 !important;}
+.work-thumb-vertical iframe{width:100%;height:100%;border:none;display:block;pointer-events:none}
 /* ── TESTIMONIALS ── */
 #testimonials{background:var(--ink)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rim)}
@@ -547,18 +549,18 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
       </div>
     </div>
 
-    <div class="work-card reveal delay-2" data-cat="youtube">
-      <div class="work-thumb">
-        <div class="thumb-ph">▶</div>
+    <div class="work-card reveal delay-2" data-cat="reel">
+      <div class="work-thumb work-thumb-vertical">
+        <iframe src="https://www.youtube.com/embed/6iTBJKxMZAc?si=OaXCcY6LevytcLfB&autoplay=1&mute=1&loop=1&playlist=6iTBJKxMZAc&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
         <div class="work-shine"></div>
         <div class="work-overlay">
-          <div class="work-cat">Coming Soon</div>
-          <div class="work-title-ov">Project 03</div>
+          <div class="work-cat">Reel / Short</div>
+          <div class="work-title-ov">Watch Project</div>
         </div>
       </div>
       <div class="work-meta">
-        <div class="work-name">PROJECT TITLE 03</div>
-        <div class="work-info-text">Add your video description here</div>
+        <div class="work-name">BMW REEL EDIT</div>
+        <div class="work-info-text">Vertical reel · Color grade · Sound sync</div>
       </div>
     </div>
 
