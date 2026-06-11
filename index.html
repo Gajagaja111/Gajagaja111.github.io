@@ -359,6 +359,7 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   .nav-links{display:none}
   #hero{grid-template-columns:1fr;padding:90px 20px 60px;gap:40px}
   .testi-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
   .faq-list{max-width:100%}
   #wa-btn{bottom:20px;right:20px;width:48px;height:48px}
   .hero-right{display:block}
@@ -374,11 +375,22 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px}
   #cursor,#cursor-ring{display:none}
   body{cursor:auto}
+  .price-card{padding:28px 20px}
+  .svc-card{padding:28px 20px}
+  .popular-badge{position:relative;top:auto;right:auto;display:inline-block;margin-bottom:12px}
+  .filter-bar{gap:6px}
+  .filter-btn{padding:7px 12px;font-size:.58rem}
+  .h1-inner{font-size:clamp(3rem,12vw,5rem)}
 }
 @media(max-width:600px){
   .stats-strip{grid-template-columns:1fr 1fr}
   .process-steps{grid-template-columns:1fr}
   .f-row{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .price-amt{font-size:1.8rem}
 }
 
 /* reduced motion */
@@ -522,16 +534,16 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
 
     <div class="work-card reveal delay-1" data-cat="reel">
       <div class="work-thumb">
-        <div class="thumb-ph">▶</div>
+        <iframe src="https://www.youtube.com/embed/6996siQ7cRY?si=mVimxf6uugD7uewz&autoplay=1&mute=1&loop=1&playlist=6996siQ7cRY&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
         <div class="work-shine"></div>
         <div class="work-overlay">
-          <div class="work-cat">Coming Soon</div>
-          <div class="work-title-ov">Project 02</div>
+          <div class="work-cat">Video Edit</div>
+          <div class="work-title-ov">Watch Project</div>
         </div>
       </div>
       <div class="work-meta">
         <div class="work-name">PROJECT TITLE 02</div>
-        <div class="work-info-text">Add your video description here</div>
+        <div class="work-info-text">Add your project description here</div>
       </div>
     </div>
 
@@ -999,11 +1011,11 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
         <a href="mailto:kharshith145@gmail.com" class="c-link">
           <div class="c-icon">✉</div> kharshith145@gmail.com
         </a>
-        <a href="https://instagram.com/yourhandle" target="_blank" class="c-link">
+        <a href="https://instagram.com/harshith.gaja" target="_blank" class="c-link">
           <div class="c-icon">📸</div> @harshith.gaja
         </a>
         <a href="https://www.youtube.com/@WhoSpokeNow" target="_blank" class="c-link">
-          <div class="c-icon">▶</div> YouTube Channel
+          <div class="c-icon">▶</div> @WhoSpokeNow
         </a>
       </div>
     </div>
@@ -1034,7 +1046,7 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
 </section>
 
 <!-- WHATSAPP BUTTON -->
-<a href="https://wa.me/916363322940" target="_blank" id="wa-btn" title="Chat on WhatsApp">
+<a href="https://wa.me/91YOURNUMBER" target="_blank" id="wa-btn" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
