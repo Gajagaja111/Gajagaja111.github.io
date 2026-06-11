@@ -273,11 +273,94 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
 /* ── SCROLL PROGRESS ── */
 #progress{position:fixed;top:0;left:0;height:2px;background:var(--volt);z-index:9500;width:0;transition:width .1s linear;box-shadow:0 0 8px rgba(200,255,0,.6)}
 
+/* ── AVAILABILITY BADGE ── */
+.avail-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid rgba(200,255,0,.25);background:rgba(200,255,0,.06);margin-bottom:20px}
+.avail-dot{width:7px;height:7px;background:var(--volt);border-radius:50%;animation:pulseDot 1.4s ease infinite}
+.avail-text{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--volt)}
+.avail-badge.booked .avail-dot{background:var(--flash)}
+.avail-badge.booked .avail-text{color:var(--flash)}
+
+/* ── FILTER BAR ── */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.filter-btn{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--rim);background:transparent;color:var(--grey);cursor:none;transition:border-color .2s,color .2s,background .2s}
+.filter-btn:hover{border-color:var(--rim2);color:var(--white)}
+.filter-btn.active{border-color:var(--volt);color:var(--volt);background:rgba(200,255,0,.06)}
+.work-card{transition:background .3s,opacity .4s,transform .4s}
+.work-card.hidden{opacity:0;transform:scale(.95);pointer-events:none;position:absolute}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--ink)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rim)}
+.testi-card{background:var(--surface);padding:40px 32px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;transition:background .3s}
+.testi-card:hover{background:var(--card)}
+.testi-card::before{content:'"';font-family:var(--display);font-size:8rem;color:rgba(200,255,0,.05);position:absolute;top:-10px;left:16px;line-height:1;pointer-events:none}
+.testi-stars{color:var(--volt);font-size:.9rem;letter-spacing:2px}
+.testi-quote{font-size:.88rem;color:var(--grey);line-height:1.85;font-style:italic;flex:1}
+.testi-author{display:flex;align-items:center;gap:14px;padding-top:16px;border-top:1px solid var(--rim)}
+.testi-avatar{width:38px;height:38px;background:var(--volt);color:var(--ink);font-family:var(--display);font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.testi-name{font-family:var(--display);font-size:1rem;letter-spacing:.04em;color:var(--white)}
+.testi-role{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:2px}
+
+/* ── FAQ ── */
+#faq{background:var(--surface)}
+.faq-list{max-width:800px;display:flex;flex-direction:column;gap:1px;background:var(--rim)}
+.faq-item{background:var(--ink);overflow:hidden;cursor:none}
+.faq-item:hover{background:var(--card)}
+.faq-q{padding:22px 28px;font-family:var(--display);font-size:1.15rem;letter-spacing:.03em;color:var(--white);display:flex;justify-content:space-between;align-items:center;gap:20px;transition:color .2s}
+.faq-q:hover{color:var(--volt)}
+.faq-icon{font-size:1.4rem;color:var(--volt);flex-shrink:0;transition:transform .3s var(--ease-out-expo);font-family:var(--mono);font-weight:300}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-out-expo),padding .3s}
+.faq-a-inner{padding:0 28px 22px;font-size:.88rem;color:var(--grey);line-height:1.8}
+.faq-item.open .faq-a{max-height:200px}
+
+/* ── WHATSAPP ── */
+#wa-btn{position:fixed;bottom:32px;right:32px;z-index:800;width:54px;height:54px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none}
+#wa-btn:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+#wa-btn svg{flex-shrink:0}
+
+/* ── PRICING ── */
+#pricing{background:var(--surface)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rim)}
+.price-card{background:var(--ink);padding:40px 32px;display:flex;flex-direction:column;gap:24px;position:relative;overflow:hidden;transition:background .3s;cursor:none}
+.price-card:hover{background:var(--card)}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--rim2);transition:background .3s}
+.price-card:hover::before{background:var(--volt)}
+.popular::before{background:var(--volt)!important}
+.brand-card::before{background:var(--plasma)!important}
+.popular-badge{position:absolute;top:16px;right:16px;background:var(--volt);color:var(--ink);font-family:var(--mono);font-size:.55rem;font-weight:700;letter-spacing:.14em;padding:5px 10px}
+.price-icon{font-size:1.6rem;margin-bottom:4px}
+.price-name{font-family:var(--display);font-size:1.4rem;font-weight:700;letter-spacing:.04em;color:var(--white);margin-bottom:8px;transition:color .2s}
+.price-card:hover .price-name{color:var(--volt)}
+.price-desc{font-size:.8rem;color:var(--grey);line-height:1.7}
+.price-mid{padding:20px 0;border-top:1px solid var(--rim);border-bottom:1px solid var(--rim)}
+.price-from{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.price-amt{font-family:var(--display);font-size:2.2rem;font-weight:700;color:var(--volt);line-height:1}
+.price-range{font-size:1.4rem;color:var(--grey)}
+.price-per{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--dim);margin-top:4px}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1}
+.price-list li{font-size:.82rem;color:var(--grey);display:flex;align-items:center;gap:10px}
+.price-list li::before{content:'✓';color:var(--volt);font-size:.7rem;flex-shrink:0;font-weight:700}
+.price-btn{display:block;padding:13px 20px;background:transparent;border:1px solid var(--rim2);color:var(--white);font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;text-align:center;transition:border-color .2s,color .2s,background .2s,transform .15s;margin-top:auto}
+.price-btn:hover{border-color:var(--volt);color:var(--volt);transform:translateY(-2px)}
+.popular-btn{background:var(--volt);color:var(--ink);border-color:var(--volt)}
+.popular-btn:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.brand-btn{border-color:var(--plasma);color:var(--plasma)}
+.brand-btn:hover{background:var(--plasma);color:var(--white);border-color:var(--plasma)}
+.pricing-note{margin-top:48px;padding:28px 36px;border:1px solid var(--rim);display:flex;align-items:center;gap:20px;background:var(--card)}
+.note-icon{font-size:1.4rem;flex-shrink:0}
+.note-text{font-size:.88rem;color:var(--grey);line-height:1.7}
+.note-text a{color:var(--volt);text-decoration:none}
+.note-text a:hover{text-decoration:underline}
+
 /* ── MOBILE ── */
 @media(max-width:960px){
   nav{padding:0 20px}
   .nav-links{display:none}
   #hero{grid-template-columns:1fr;padding:90px 20px 60px;gap:40px}
+  .testi-grid{grid-template-columns:1fr}
+  .faq-list{max-width:100%}
+  #wa-btn{bottom:20px;right:20px;width:48px;height:48px}
   .hero-right{display:block}
   .hero-stat-badge{display:none}
   section{padding:70px 20px}
@@ -325,6 +408,9 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
     <li><a href="#services">Services</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
 </nav>
@@ -336,6 +422,10 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   <div class="orb orb-2"></div>
 
   <div class="hero-left">
+    <div class="avail-badge" id="availBadge">
+      <span class="avail-dot"></span>
+      <span class="avail-text">Available for Work</span>
+    </div>
     <div class="hero-eyebrow">
       <div class="eyebrow-line"></div>
       <span class="eyebrow-text">Video Editor & Motion Designer</span>
@@ -405,11 +495,19 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   <h2 class="s-h2 reveal">RECENT<br>PROJECTS</h2>
   <p class="s-sub reveal">A curated selection of edits. Replace placeholders with your video embeds as your portfolio grows.</p>
 
-  <div class="work-grid">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="documentary">Documentary</button>
+    <button class="filter-btn" data-filter="reel">Reels</button>
+    <button class="filter-btn" data-filter="youtube">YouTube</button>
+    <button class="filter-btn" data-filter="motion">Motion Graphics</button>
+    <button class="filter-btn" data-filter="brand">Brand</button>
+  </div>
+  <div class="work-grid" id="workGrid">
     <!-- Card 1 — YOUR VIDEO -->
-    <div class="work-card reveal">
+    <div class="work-card reveal" data-cat="documentary">
       <div class="work-thumb">
-        <iframe src="https://www.youtube.com/embed/WVa9auhzGVQ?si=zDP1qAZvjt4l2ljA&autoplay=1&mute=1&loop=1&playlist=WVa9auhzGVQ&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/WVa9auhzGVQ?si=zDP1qAZvjt4l2ljA" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
         <div class="work-shine"></div>
         <div class="work-overlay">
           <div class="work-cat">Documentary Edit</div>
@@ -422,10 +520,9 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
       </div>
     </div>
 
-    <!-- Cards 2–6: replace thumb-ph with your iframes when ready -->
-    <div class="work-card reveal delay-1">
+    <div class="work-card reveal delay-1" data-cat="reel">
       <div class="work-thumb">
-        <iframe src="https://www.youtube.com/embed/6996siQ7cRY?si=mVimxf6uugD7uewz&autoplay=1&mute=1&loop=1&playlist=6996siQ7cRY&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
+        <div class="thumb-ph">▶</div>
         <div class="work-shine"></div>
         <div class="work-overlay">
           <div class="work-cat">Coming Soon</div>
@@ -433,12 +530,12 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
         </div>
       </div>
       <div class="work-meta">
-        <div class="work-name">BASIC VIDEO</div>
-        <div class="work-info-text">This was a basic video in kannada language</div>
+        <div class="work-name">PROJECT TITLE 02</div>
+        <div class="work-info-text">Add your video description here</div>
       </div>
     </div>
 
-    <div class="work-card reveal delay-2">
+    <div class="work-card reveal delay-2" data-cat="youtube">
       <div class="work-thumb">
         <div class="thumb-ph">▶</div>
         <div class="work-shine"></div>
@@ -611,7 +708,8 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   <div class="about-grid">
     <div class="about-visual reveal-left">
       <div class="about-photo">
-        <img src="gaja.JPG" alt="Harshith Gaja"/>
+        <!-- Replace with: <img src="photo.jpg" alt="Harshith Gaja"/> -->
+        <div class="about-photo-ph">📷</div>
       </div>
       <div class="about-badge-v">1.5 YRS<br>EXPERIENCE</div>
       <div class="about-border-accent"></div>
@@ -625,6 +723,199 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
         <div class="about-li"><div class="about-li-dot"></div>Fast turnaround · Unlimited revisions</div>
         <div class="about-li"><div class="about-li-dot"></div>Available for one-off projects & long-term retainers</div>
         <div class="about-li"><div class="about-li-dot"></div>Brand, creator & corporate clients welcome</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="s-tag reveal">Transparent Pricing</div>
+  <h2 class="s-h2 reveal">PACKAGES &<br>PRICING</h2>
+  <p class="s-sub reveal">Affordable, professional editing for every budget. All packages include unlimited revisions.</p>
+
+  <div class="pricing-grid">
+
+    <!-- Card 1 -->
+    <div class="price-card reveal">
+      <div class="price-top">
+        <div class="price-icon">📱</div>
+        <div class="price-name">REEL / SHORT</div>
+        <div class="price-desc">Instagram Reels, YouTube Shorts, TikTok — vertical-first, scroll-stopping edits up to 60 seconds.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹500 <span class="price-range">– ₹800</span></div>
+        <div class="price-per">per video</div>
+      </div>
+      <ul class="price-list">
+        <li>Up to 60 seconds</li>
+        <li>Cuts & transitions</li>
+        <li>Music sync</li>
+        <li>Subtitles / captions</li>
+        <li>Unlimited revisions</li>
+      </ul>
+      <a href="#contact" class="price-btn">Get Started →</a>
+    </div>
+
+    <!-- Card 2 — POPULAR -->
+    <div class="price-card popular reveal delay-1">
+      <div class="popular-badge">⚡ MOST POPULAR</div>
+      <div class="price-top">
+        <div class="price-icon">🎬</div>
+        <div class="price-name">YOUTUBE VIDEO</div>
+        <div class="price-desc">Full long-form YouTube video editing with pacing, graphics, and colour grade. 10–15 minutes.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹1,500 <span class="price-range">– ₹2,500</span></div>
+        <div class="price-per">per video</div>
+      </div>
+      <ul class="price-list">
+        <li>10–15 minute video</li>
+        <li>Motion graphics & titles</li>
+        <li>Color grading</li>
+        <li>Sound design & music</li>
+        <li>Thumbnail design</li>
+        <li>Unlimited revisions</li>
+      </ul>
+      <a href="#contact" class="price-btn popular-btn">Get Started →</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="price-card reveal delay-2">
+      <div class="price-top">
+        <div class="price-icon">✨</div>
+        <div class="price-name">MOTION GRAPHICS</div>
+        <div class="price-desc">Custom animated titles, lower-thirds, logo reveals, and kinetic typography up to 30 seconds.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹1,000 <span class="price-range">– ₹2,000</span></div>
+        <div class="price-per">per project</div>
+      </div>
+      <ul class="price-list">
+        <li>Up to 30 seconds</li>
+        <li>Custom animations</li>
+        <li>Brand colours & fonts</li>
+        <li>After Effects quality</li>
+        <li>Unlimited revisions</li>
+      </ul>
+      <a href="#contact" class="price-btn">Get Started →</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="price-card reveal delay-3">
+      <div class="price-top">
+        <div class="price-icon">🎨</div>
+        <div class="price-name">COLOR GRADING</div>
+        <div class="price-desc">Professional color correction and cinematic grading only — for footage you've already edited.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹500 <span class="price-range">– ₹1,000</span></div>
+        <div class="price-per">per project</div>
+      </div>
+      <ul class="price-list">
+        <li>Color correction</li>
+        <li>Cinematic LUT grading</li>
+        <li>Skin tone matching</li>
+        <li>Scene consistency</li>
+        <li>Unlimited revisions</li>
+      </ul>
+      <a href="#contact" class="price-btn">Get Started →</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="price-card reveal delay-1">
+      <div class="price-top">
+        <div class="price-icon">🎞️</div>
+        <div class="price-name">SHORT FILM / DOC</div>
+        <div class="price-desc">Full cinematic edit for short films, documentaries, and brand films with complete post-production.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹3,000 <span class="price-range">– ₹6,000</span></div>
+        <div class="price-per">per project</div>
+      </div>
+      <ul class="price-list">
+        <li>Full timeline edit</li>
+        <li>Color grade & sound mix</li>
+        <li>Motion graphics</li>
+        <li>Multiple revisions</li>
+        <li>All formats delivered</li>
+      </ul>
+      <a href="#contact" class="price-btn">Get Started →</a>
+    </div>
+
+    <!-- Card 6 — Brand Package -->
+    <div class="price-card brand-card reveal delay-2">
+      <div class="price-top">
+        <div class="price-icon">📦</div>
+        <div class="price-name">BRAND PACKAGE</div>
+        <div class="price-desc">Complete video package for brands — reels, long-form, motion graphics, and multi-platform delivery.</div>
+      </div>
+      <div class="price-mid">
+        <div class="price-from">Starting from</div>
+        <div class="price-amt">₹5,000 <span class="price-range">– ₹10,000</span></div>
+        <div class="price-per">per package</div>
+      </div>
+      <ul class="price-list">
+        <li>Everything included</li>
+        <li>Reels + long-form + graphics</li>
+        <li>Color grade & sound design</li>
+        <li>Multi-platform export</li>
+        <li>Priority delivery</li>
+        <li>Dedicated support</li>
+      </ul>
+      <a href="#contact" class="price-btn brand-btn">Get Started →</a>
+    </div>
+
+  </div>
+
+  <div class="pricing-note reveal">
+    <div class="note-icon">💬</div>
+    <div class="note-text">Not sure which package fits? <a href="#contact">Message me</a> — I'll give you a custom quote based on your exact project needs.</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="s-tag reveal">Client Reviews</div>
+  <h2 class="s-h2 reveal">WHAT CLIENTS<br>SAY</h2>
+  <p class="s-sub reveal">Real feedback from real clients. Add your own reviews as you collect them.</p>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"Harshith delivered an incredible documentary edit — the pacing, colour grade and sound design were beyond what I expected. Will definitely work together again."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">Client Name</div>
+          <div class="testi-role">Content Creator</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"Fast turnaround, great communication, and the motion graphics were exactly what our brand needed. Highly professional for the price."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">B</div>
+        <div>
+          <div class="testi-name">Client Name</div>
+          <div class="testi-role">Brand Owner</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"My YouTube channel views doubled after switching to Harshith for editing. He understands retention, pacing and hooks better than most editors I've worked with."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">Y</div>
+        <div>
+          <div class="testi-name">Client Name</div>
+          <div class="testi-role">YouTuber</div>
+        </div>
       </div>
     </div>
   </div>
@@ -663,6 +954,39 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="s-tag reveal">Quick Answers</div>
+  <h2 class="s-h2 reveal">FAQ</h2>
+  <p class="s-sub reveal">Common questions answered. Still have one? Just message me.</p>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q">How long does a typical edit take?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Reels take 1–2 days. YouTube videos take 3–5 days. Short films and brand packages take 7–14 days. Rush delivery is available on request.</div>
+    </div>
+    <div class="faq-item reveal delay-1">
+      <div class="faq-q">How many revisions do I get?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Unlimited revisions until you're 100% happy. I don't charge extra for changes — your satisfaction is the goal.</div>
+    </div>
+    <div class="faq-item reveal delay-2">
+      <div class="faq-q">What footage formats do you accept?<span class="faq-icon">+</span></div>
+      <div class="faq-a">I accept all common formats — MP4, MOV, AVI, MKV, RAW, and more. You can send files via Google Drive, WeTransfer, or any cloud link.</div>
+    </div>
+    <div class="faq-item reveal delay-3">
+      <div class="faq-q">Do you work with international clients?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes! I work with clients worldwide. Communication is via WhatsApp or email, and files are shared through cloud links. Payment via PayPal or bank transfer.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">What software do you use?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Primarily Adobe Premiere Pro and After Effects for editing and motion graphics. DaVinci Resolve for color grading. Adobe Audition for sound design.</div>
+    </div>
+    <div class="faq-item reveal delay-1">
+      <div class="faq-q">Do you offer monthly retainer packages?<span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes! If you need consistent editing every month, I offer discounted retainer rates. Contact me to discuss a custom package for your needs.</div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
@@ -673,9 +997,9 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
       <div class="contact-socials">
         <!-- Update these with your real links -->
         <a href="mailto:kharshith145@gmail.com" class="c-link">
-          <div class="c-icon">✉</div> harshithgaja@email.com
+          <div class="c-icon">✉</div> kharshith145@gmail.com
         </a>
-        <a href="https://instagram.com/harshith.gaja" target="_blank" class="c-link">
+        <a href="https://instagram.com/yourhandle" target="_blank" class="c-link">
           <div class="c-icon">📸</div> @harshith.gaja
         </a>
         <a href="https://www.youtube.com/@WhoSpokeNow" target="_blank" class="c-link">
@@ -708,6 +1032,11 @@ footer{padding:32px 48px;border-top:1px solid var(--rim);display:flex;align-item
     </div>
   </div>
 </section>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/916363322940" target="_blank" id="wa-btn" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <!-- FOOTER -->
 <footer>
@@ -762,7 +1091,56 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.12});
 revEls.forEach(el=>obs.observe(el));
 
-// ── SKILL BARS
+// ── FILTER BUTTONS
+const filterBtns = document.querySelectorAll('.filter-btn');
+const workCards = document.querySelectorAll('.work-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    workCards.forEach(card => {
+      const cat = card.dataset.cat || 'all';
+      if(filter === 'all' || cat === filter){
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+        card.style.position = 'relative';
+        card.style.pointerEvents = 'auto';
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        card.style.position = 'absolute';
+        card.style.pointerEvents = 'none';
+      }
+    });
+  });
+});
+
+// ── FAQ ACCORDION
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+// Wrap faq-a content
+document.querySelectorAll('.faq-a').forEach(a => {
+  const text = a.textContent.trim();
+  a.innerHTML = `<div class="faq-a-inner">${text}</div>`;
+});
+
+// ── AVAILABILITY (change to "Fully Booked" when needed)
+// To mark as booked, change false to true below:
+const isBooked = false;
+const badge = document.getElementById('availBadge');
+if(badge){
+  if(isBooked){
+    badge.classList.add('booked');
+    badge.querySelector('.avail-text').textContent = 'Fully Booked';
+  }
+}
+
 const bars=document.querySelectorAll('.skill-bar');
 const barObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
